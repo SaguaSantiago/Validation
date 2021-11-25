@@ -1,4 +1,4 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { useState } from "react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
@@ -49,11 +49,14 @@ export default function AppRoutes( ) {
             </AppNAV>
 
             <div className={classes.offSet}></div>
+
             <Routes>
+
                 <Route path="/Login" element={<LoginPage isLogin={ isLogin } />} />
                 <Route path="/" element={<HomePage/>} />
                 <Route path="*" element={<Error404/>} />
                 { auth ? <Route path="/Perfil" element={<PerfilPage/>}/> : null} 
+
             </Routes>
 
         </Router>

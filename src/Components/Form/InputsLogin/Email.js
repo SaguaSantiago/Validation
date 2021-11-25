@@ -4,10 +4,12 @@ import { TextField } from "@material-ui/core";
 export default function EmailInput (props) {
 
  return(
-<div>
+
 <TextField
 
      {...props}
+     fullWidth
+     variant= "outlined"
      placeholder="Email" 
      name="email" 
      label="Email"
@@ -18,7 +20,6 @@ export default function EmailInput (props) {
       />
 
 
- </div>
 
  )
 }

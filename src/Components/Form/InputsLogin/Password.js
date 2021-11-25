@@ -8,6 +8,8 @@ export default function PasswordInput ( props ) {
         <TextField
 
         {...props}
+     fullWidth
+     variant= "outlined"
      type= "password"
      placeholder="Password" 
      name="password" 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, makeStyles, Paper } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Button, makeStyles } from '@material-ui/core';
 import { Formik } from 'formik';
 import { validationLogin } from "../../Validation/IndexValidation"
 import EmailInput from './InputsLogin/Email';
@@ -9,9 +9,17 @@ import { usuaries } from '../../Usuaries/usuaries';
 import ErrorsInput from './ErrorsText/ErrorsInputText';
 
 const useStyles = makeStyles({
-
-    paper: {
-        maxWidth : "50%"
+    flexItem: {
+        marginBottom: "40px",
+        marginTop: "40px",
+        width: "60%"
+    },
+    input : {
+        marginBottom : "20px",
+        width: "100%"
+    },
+    button : {
+        marginBottom : "20px"
     }
 })
 
@@ -20,6 +28,8 @@ export default function LoginForm ( props ) {
 
     const history = useNavigate()
     const classes = useStyles()
+    const [ErrorEmail,setErrorEmail] = useState(false)
+    const [ErrorPass, setErrorPass] = useState(false)
 
     return(
         <>
@@ -45,40 +55,55 @@ export default function LoginForm ( props ) {
 
                 {({handleSubmit, values, handleChange, handleBlur, errors, touched,})=> (
 
-                    <Paper className={ classes.paper } >
-                
-                <form onSubmit={handleSubmit}>
 
+                
+                <form className={classes.flexItem} onSubmit={handleSubmit}>
+
+                    <div className= {classes.input}>
                     <EmailInput
                         value={values.email}
                         onChange={handleChange}
                         onBlur= {handleBlur}
-                        error= {errors.email}
-
+                        errors= {errors.email}
+                        error= {ErrorEmail}
                         />
+
+                            {touched.email && errors.email ? setErrorEmail(true) : setErrorEmail(false)}
 
                             {touched.email && errors.email ? <ErrorsInput errors = {errors.email} /> : null} 
                         
+                    </div>
 
-                    <div>
+                    <div className= {classes.input}>
                 
                         <PasswordInput
                         value={values.password}
                         onChange={handleChange}
                         onBlur= {handleBlur}
-                        error= {errors.password}
+                        errors= {errors.password}
+                        error = {ErrorPass}
+                        
                         />
+                            {touched.password && errors.password ? setErrorPass(true) : setErrorPass(false)}
 
                             {touched.password && errors.password ? <ErrorsInput errors = {errors.password} /> : null} 
 
                     </div>
 
-                    <div>
-                        <Button variant="contained" color="secondary" type="submit" name="submit"> Submit </Button>
+                    <div className= {classes.button}>
+                        <Button 
+                        variant="contained"
+                        size= "large" 
+                        color="secondary" 
+                        type="submit" 
+                        name="submit"
+                        > 
+                        Submit 
+
+                        </Button>
                     </div>
                 
                 </form>
-                </Paper>
                 )}
 
  </Formik>
