@@ -1,5 +1,5 @@
 import { makeStyles, Paper } from "@material-ui/core"
-import LoginForm from "../Components/Form/Form"
+import LoginForm from "../Components/Form"
 
 const useStyles = makeStyles({
 

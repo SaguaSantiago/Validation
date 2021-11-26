@@ -1,27 +1,23 @@
-import { createTheme } from "@material-ui/core";
-import { red, teal } from "@material-ui/core/colors";
+import { createTheme } from "@material-ui/core"
+import { red, teal } from "@material-ui/core/colors"
 
 export const theme = createTheme({
-
-    palette: {
-        primary:{
-            main : teal[500]
-        },
-
-        secondary: {
-            main: "#004d40",
-            dark: "00352c"
-        },
-
-        error: {
-            main: red[900]
-        }
+  palette: {
+    primary: {
+      main: teal[500],
     },
-
-    typography: {
-        overline: {
-            // fontWeight: "600",
-            fontSize: "1rem"
-        }
-    }
+    secondary: {
+      main: "#004d40",
+      dark: "00352c",
+    },
+    error: {
+      main: red[900],
+    },
+  },
+  typography: {
+    overline: {
+      // fontWeight: "600",
+      fontSize: "1rem",
+    },
+  },
 })

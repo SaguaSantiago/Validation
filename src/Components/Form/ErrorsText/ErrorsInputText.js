@@ -1,23 +1,19 @@
-import { makeStyles, Typography } from "@material-ui/core";
-
+import { makeStyles, Typography } from "@material-ui/core"
 
 const useStyles = makeStyles({
-
-    errorContainer:{
-        height : "20px"
-    }
+  errorContainer: {
+    height: "20px",
+  },
 })
 
-export default function ErrorsInput ( props ) {
+export default function ErrorsInput(props) {
+  const classes = useStyles()
 
-    const classes = useStyles()
-
-    return(
-
-        <div className= {classes.errorContainer}>
-
-            <Typography variant = "body2" color="error" > {props.errors} </Typography>
-
-        </div>
-    )
+  return (
+    <div className={classes.errorContainer}>
+      <Typography variant="body2" color="error">
+        {props.errors}
+      </Typography>
+    </div>
+  )
 }
