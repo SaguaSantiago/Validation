@@ -2,13 +2,13 @@ import React from "react"
 import { Button, Grid } from "@material-ui/core"
 import { Form, Formik } from "formik"
 import { validationLogin } from "../../Validation/IndexValidation"
-import { useNavigate } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { usuaries } from "../../Usuaries/usuaries"
 import FieldNormal from "../CustomComponents/Fields/Normal"
 import { useStyles } from "./style"
 
 export default function LoginForm(props) {
-  const history = useNavigate()
+  const history = useHistory()
   const classes = useStyles()
   const INPUTS = [
     {
@@ -41,7 +41,8 @@ export default function LoginForm(props) {
             valores.password === usuaries[0].password
           ) {
             props.isLogin()
-            history("/")
+            localStorage.setItem("isLogin", true)
+            history.push("/")
           }
         }}
       >

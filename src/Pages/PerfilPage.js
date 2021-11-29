@@ -1,11 +1,3 @@
-
-
-
-export default function PerfilPage () {
-
-
-    return(
-
-        <h1>Perfil</h1>
-    )
+export default function PerfilPage() {
+  return <h1>Perfil</h1>
 }
