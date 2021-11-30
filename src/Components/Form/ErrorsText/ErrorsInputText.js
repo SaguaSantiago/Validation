@@ -1,13 +1,8 @@
-import { makeStyles, Typography } from "@material-ui/core"
-
-const useStyles = makeStyles({
-  errorContainer: {
-    height: "20px",
-  },
-})
+import { Typography } from "@material-ui/core"
+import { Styles } from "../../../Styles/Styles"
 
 export default function ErrorsInput(props) {
-  const classes = useStyles()
+  const classes = Styles.inputErrors
 
   return (
     <div className={classes.errorContainer}>

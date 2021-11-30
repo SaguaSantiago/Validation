@@ -1,13 +1,11 @@
 import { TextField } from "@material-ui/core"
-import { makeStyles, Typography } from "@material-ui/core"
+import { Typography } from "@material-ui/core"
 import { useField } from "formik"
+import { Styles } from "../../../Styles/Styles"
+
 export default function FieldNormal({ ...props }) {
   const [field, meta] = useField(props)
-  const useStyles = makeStyles({
-    errorContainer: {
-      height: "20px",
-    },
-  })
+  const useStyles = Styles.CustomInputs
   function ErrorsInput(props) {
     const classes = useStyles()
     return (

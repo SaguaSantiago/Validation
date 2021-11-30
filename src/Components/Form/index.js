@@ -5,27 +5,14 @@ import { validationLogin } from "../../Validation/IndexValidation"
 import { useHistory } from "react-router-dom"
 import { usuaries } from "../../Usuaries/usuaries"
 import FieldNormal from "../CustomComponents/Fields/Normal"
-import { useStyles } from "./style"
+import { Styles } from "../../Styles/Styles"
+import { INPUTS } from "../../Objects/Objects"
+
+const useStyle = Styles.LoginForm
 
 export default function LoginForm(props) {
   const history = useHistory()
-  const classes = useStyles()
-  const INPUTS = [
-    {
-      id: 1,
-      name: "email",
-      label: "Email",
-      sm: 12,
-      xs: 12,
-    },
-    {
-      id: 2,
-      name: "password",
-      label: "Contrase;a",
-      sm: 12,
-      xs: 12,
-    },
-  ]
+  const classes = useStyle()
 
   return (
     <>
@@ -40,7 +27,7 @@ export default function LoginForm(props) {
             valores.email === usuaries[0].gmail &&
             valores.password === usuaries[0].password
           ) {
-            props.isLogin()
+            // props.isLogin()
             localStorage.setItem("isLogin", true)
             history.push("/")
           }
