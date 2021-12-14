@@ -5,27 +5,18 @@ import { Styles } from "../Styles/Styles"
 
 const useSyles = makeStyles(Styles.layout)
 
-export default function IndexLayout() {
+export default function IndexLayout(props) {
   const classes = useSyles()
+  const { token } = props
   return (
     <>
       <Layout>
-        {/* <a onClick={localStorage.removeItem("isLogin")} /> */}
-
         <NavLink className={classes.navLink} to="/">
           {" "}
           Home{" "}
         </NavLink>
-        <NavLink
-          activeClassName={classes.active}
-          className={classes.navLink}
-          to="/login"
-        >
-          {" "}
-          Login{" "}
-        </NavLink>
 
-        {localStorage.getItem("isLogin") ? (
+        {token ? (
           <NavLink
             activeClassName={classes.active}
             to="/perfil"
@@ -34,6 +25,16 @@ export default function IndexLayout() {
             Perfil{" "}
           </NavLink>
         ) : null}
+
+        {token ? null : (
+          <NavLink
+            activeClassName={classes.active}
+            className={classes.navLink}
+            to="/login"
+          >
+            Login
+          </NavLink>
+        )}
       </Layout>
       <div className={classes.offSet}></div>
     </>

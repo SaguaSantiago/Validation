@@ -27,9 +27,8 @@ export default function LoginForm(props) {
             valores.email === usuaries[0].gmail &&
             valores.password === usuaries[0].password
           ) {
-            // props.isLogin()
-            localStorage.setItem("isLogin", true)
-            history.push("/")
+            localStorage.setItem("Logged", "true")
+            history.push("/dashboard")
           }
         }}
       >
