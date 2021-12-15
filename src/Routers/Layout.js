@@ -5,7 +5,7 @@ import { Styles } from "../Styles/Styles"
 
 const useSyles = makeStyles(Styles.layout)
 
-export default function IndexLayout() {
+export default function IndexLayout({ token }) {
   const classes = useSyles()
   return (
     <>
@@ -13,25 +13,23 @@ export default function IndexLayout() {
         {/* <a onClick={localStorage.removeItem("isLogin")} /> */}
 
         <NavLink className={classes.navLink} to="/">
-          {" "}
-          Home{" "}
+          Home
         </NavLink>
         <NavLink
           activeClassName={classes.active}
           className={classes.navLink}
           to="/login"
         >
-          {" "}
-          Login{" "}
+          Login
         </NavLink>
 
-        {localStorage.getItem("isLogin") ? (
+        {token ? (
           <NavLink
             activeClassName={classes.active}
             to="/perfil"
             className={classes.navLink}
           >
-            Perfil{" "}
+            Perfil
           </NavLink>
         ) : null}
       </Layout>

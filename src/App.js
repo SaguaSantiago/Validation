@@ -9,50 +9,25 @@ import PerfilPage from "./Pages/PerfilPage"
 import PrivateRoute from "./Routes/PrivateRoute"
 import PublicRoute from "./Routes/PrivateRoute"
 import { Switch, Route } from "react-router"
-import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter as Router, NavLink } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 
 function App() {
-  const token = localStorage.getItem("isLogin")
-
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Layout />
-
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/"> Home </NavLink>
         <Switch>
-          {/* <Route exact path="/login" render={() => <LoginPage />} />
-          {/* <Route exact path="/" render={() => <HomePage />} />
-          <PublicRoute
-            getToken={getToken}
-            exact
-            path="/"
-            component={PublicHome}
-          />
-
-          <PrivateRoute
-            exact
-            path="/perfil"
-            getToken={getToken}
-            component={PerfilPage}
-          />
-
-          <PrivateRoute
-            getToken={getToken}
-            exact
-            path="/private"
-            component={PrivateHome}
-          /> */}
-
           <PublicRoute exact path="/" component={PublicHome} />
 
-          {/* <PublicRoute
-            exact
-            getToken={getToken}
-            path="/login"
-            component={LoginPage}
-          /> */}
-
-          <Route path="*" render={() => <Error404 />} />
+          <PublicRoute exact path="/login" component={LoginPage} />
+          {/* 
+          {token ? (
+            <Route exact path="/" render={() => <PrivateHome />} />
+          ) : (
+            <Redirect to="/login" />
+          )} */}
         </Switch>
       </Router>
     </ThemeProvider>
@@ -60,3 +35,48 @@ function App() {
 }
 
 export default App
+
+{
+  /* <Switch>
+   <Route exact path="/login" render={() => <LoginPage />} />
+   <Route exact path="/" render={() => <HomePage />} /> 
+  <PublicRoute
+    // token={token}
+    exact
+    path="/"
+    component={PublicHome}
+  />
+  <PublicRoute
+    // token={token}
+    exact
+    path="/login"
+    component={LoginPage}
+  />
+
+  <PrivateRoute
+    exact
+    path="/perfil"
+    // token={token}
+    component={PerfilPage}
+  />
+
+  <PrivateRoute
+    // token={token}
+    exact
+    path="/private"
+    component={PrivateHome}
+  />
+
+   <PublicRoute exact path="/" component={PublicHome} />
+  <PrivateRoute exact token={token} path="/private" component={PrivateHome} /> 
+
+   <PublicRoute
+    exact
+    getToken={getToken}
+    path="/login"
+    component={LoginPage}
+  /> 
+
+  <Route path="*" render={() => <Error404 />} />
+</Switch> */
+}

@@ -28,7 +28,7 @@ export default function LoginForm(props) {
             valores.password === usuaries[0].password
           ) {
             // props.isLogin()
-            localStorage.setItem("isLogin", true)
+            localStorage.setItem("token", "loged")
             history.push("/")
           }
         }}
