@@ -27,14 +27,13 @@ export default function LoginForm(props) {
             valores.email === usuaries[0].gmail &&
             valores.password === usuaries[0].password
           ) {
-            // props.isLogin()
-            localStorage.setItem("token", "loged")
-            history.push("/")
+            localStorage.setItem("Logged", "true")
+            history.push("/dashboard")
           }
         }}
       >
         {({ values }) => (
-          <Form className={classes.flexItem}>
+          <Form className={classes.flexItem} autocomplete="off">
             <Grid
               container
               spacing={2}
@@ -42,9 +41,9 @@ export default function LoginForm(props) {
               alignItems="center"
               justifyContent="center"
             >
-              {INPUTS.map(({ name, label, xs, sm }) => (
+              {INPUTS.map(({ id, name, label, xs, sm }) => (
                 <Grid item sm={sm} xs={xs}>
-                  <FieldNormal name={name} label={label} />
+                  <FieldNormal key={id} name={name} label={label} />
                 </Grid>
               ))}
             </Grid>

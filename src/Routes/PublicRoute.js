@@ -1,13 +1,12 @@
-import { Redirect, Route } from "react-router"
+import { Route, Redirect } from "react-router"
 
 export default function PublicRoute({ component: Component, ...rest }) {
-  let token = true
-
+  const token = localStorage.getItem("Logged")
   return (
     <Route
       {...rest}
       render={(props) =>
-        token ? <Redirect to="/private" /> : <Component {...props} />
+        token ? <Redirect to="/dashboard" /> : <Component {...props} />
       }
     />
   )
