@@ -27,3 +27,22 @@ export const Steps = [
     index: 3,
   },
 ]
+
+//  en vez de eso proba usar Swich
+
+function example(index) {
+  switch (index) {
+    case 1:
+      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
+      return <div>hello</div>
+    case "valor2":
+      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
+      break
+    case "valor 3":
+      //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+      break
+    default:
+      //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+      break
+  }
+}
