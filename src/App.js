@@ -10,6 +10,7 @@ import PrivateRoute from "./Routes/PrivateRoute"
 import PublicRoute from "./Routes/PublicRoute"
 import { Switch, Route } from "react-router"
 import { BrowserRouter as Router } from "react-router-dom"
+import RegisterPage from "./Pages/PublicPage/RegisterPage"
 
 function App(props) {
   return (
@@ -21,7 +22,7 @@ function App(props) {
           <PublicRoute exact path="/" component={PublicHome} />
           <PrivateRoute exact path="/dashboard" component={PrivateHome} />
           <PrivateRoute exact path="/perfil" component={PerfilPage} />
-
+          <PublicRoute exact path="/register" component={RegisterPage} />
           <PublicRoute exact path="/login" component={LoginPage} />
 
           <Route path="*" render={() => <Error404 />} />

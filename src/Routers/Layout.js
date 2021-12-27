@@ -34,6 +34,16 @@ export default function IndexLayout(props) {
             Login
           </NavLink>
         )}
+
+        {token ? null : (
+          <NavLink
+            activeClassName={classes.active}
+            className={classes.navLink}
+            to="/register"
+          >
+            Register
+          </NavLink>
+        )}
       </Layout>
       <div className={classes.offSet}></div>
     </>
