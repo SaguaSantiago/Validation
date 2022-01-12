@@ -19,5 +19,9 @@ export const theme = createTheme({
       // fontWeight: "600",
       fontSize: "1rem",
     },
+    h6: {
+      fontFamily: "'Courier New', monospace",
+      fontWeight: "600",
+    },
   },
 })

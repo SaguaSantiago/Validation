@@ -45,9 +45,48 @@ const LoginForm = makeStyles({
   },
 })
 
+const registerPageStyles = makeStyles({
+  buttonGroup: {
+    display: "flex",
+  },
+  backButton: {
+    flex: "1",
+    marginLeft: "20%",
+  },
+  nextButton: {
+    marginRight: "20%",
+  },
+  content: {
+    marginBottom: "40px",
+  },
+  paper: {
+    maxWidth: "70%",
+    minHeight: "500px",
+    margin: "auto",
+    padding: "10px",
+  },
+  select: {
+    minWidth: "50%",
+  },
+})
+
+const steps = makeStyles({
+  select: {
+    minWidth: "30%",
+  },
+  Typography: {
+    padding: "50px",
+  },
+  button: {
+    margin: "auto",
+  },
+})
+
 export const Styles = {
   layout,
   inputErrors,
   CustomInputs,
   LoginForm,
+  registerPageStyles,
+  steps
 }
